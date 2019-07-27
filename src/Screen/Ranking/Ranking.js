@@ -69,5 +69,6 @@ Ranking.propTypes = {
 };
 
 Ranking.defaultProps = {
-    // bla: 'test',
+    navigation: PropTypes.object,
+    dataScore: PropTypes.array,
 };

@@ -51,4 +51,5 @@ IntroOption.propTypes = {
 
 IntroOption.defaultProps = {
     // bla: 'test',
+    navigation: PropTypes.object
 };
