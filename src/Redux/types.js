@@ -1,0 +1,1 @@
+export const SAVE_CORE = 'SAVE_CORE';
