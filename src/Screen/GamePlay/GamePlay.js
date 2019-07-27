@@ -188,7 +188,8 @@ export default class GamePlay extends PureComponent {
     </View>;
 
     render() {
-        console.log(GamePlayUtils.solve(this.state.dataPuzzle))
+        //Get the results of the puzzle
+        //console.log(GamePlayUtils.solve(this.state.dataPuzzle))
         return (
             <View style={styles.container}>
                 {this.renderHeader()}
