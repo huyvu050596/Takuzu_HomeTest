@@ -43,5 +43,10 @@ const styles = EStyleSheet.create({
         marginHorizontal: 30,
         alignSelf: 'center',
     },
+    viewEmpty: {
+        flex:1,
+        alignItems:'center',
+        justifyContent: 'center',
+    }
 });
 export default styles;

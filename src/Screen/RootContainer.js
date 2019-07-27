@@ -4,11 +4,11 @@ import {createAppContainer} from 'react-navigation';
 import {StatusBar, StyleSheet, View, Platform} from 'react-native';
 // Components
 import MainNav from '../Navigation/AppNavigation';
-import {ApplicationStyles, Colors} from '../Themes';
+import {ApplicationStyles, Colors, Metrics} from '../Themes';
 import AsyncStorage from '@react-native-community/async-storage';
 
 const AppContainer = createAppContainer(MainNav);
-const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : 0;
+const STATUSBAR_HEIGHT = Metrics.isIphoneX() ? 35 : Platform.OS === 'ios' ? 20 : 0;
 
 const persistenceKey = "persistenceKey";
 const persistNavigationState = async (navState) => {

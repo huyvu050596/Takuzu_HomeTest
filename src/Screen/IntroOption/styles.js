@@ -40,7 +40,7 @@ const styles = EStyleSheet.create({
     },
     txtBottom:{
         position:'absolute',
-        bottom: 10,
+        bottom: Metrics.isIphoneX() ? 30 : 15,
         color: Colors.neutral6,
         fontSize: Fonts.fontSize.heading1,
         lineHeight: Fonts.fontSize.heading1 + 3,

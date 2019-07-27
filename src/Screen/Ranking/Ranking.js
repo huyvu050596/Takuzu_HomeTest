@@ -28,16 +28,23 @@ export default class Ranking extends PureComponent {
 
     renderHeader = () => <CustomTitle type='heading2'
                                       style={styles.txtHeading}
-                                      color={Colors.neutral}>
+                                      color={Colors.neutral6}>
         {'Bảng xếp hạng'}
     </CustomTitle>;
+
+    renderEmptyView = () =>  <View style={styles.viewEmpty}>
+        <CustomTitle type='heading3'
+                     color={Colors.neutral6}>
+            {'Bảng xếp hạng trống'}
+        </CustomTitle>
+    </View>;
 
     renderBody = () => <View style={styles.viewBody}>
         {
             this.props.dataScore.length > 0 ? <VerticalListView data={this.props.dataScore}
                                                                 ItemSeparatorComponent={this.renderSeparator}
                                                                 keyExtractor={item => item.id.toString()}
-                                                                renderChildren={this.renderItemScore}/> : <View style={{backgroundColor:'red'}}/>
+                                                                renderChildren={this.renderItemScore}/> : this.renderEmptyView()
         }
     </View>;
 

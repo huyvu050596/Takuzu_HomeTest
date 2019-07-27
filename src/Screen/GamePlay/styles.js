@@ -11,7 +11,7 @@ const styles = EStyleSheet.create({
         //alignItems:'center'
     },
     viewHeading: {
-        marginVertical: 10,
+        marginVertical: Metrics.isIphoneX() ? 30 : 20,
         width: width / 1.5,
         borderWidth: 0.5,
         borderColor: Colors.neutral6,
@@ -39,7 +39,9 @@ const styles = EStyleSheet.create({
         position: 'absolute',
         bottom: Metrics.isIphoneX() ? 30 : 15,
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        alignSelf:'center',
+        justifyContent: 'center',
     },
     txtBottomBack: {
         color: Colors.neutral6,
