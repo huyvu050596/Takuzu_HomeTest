@@ -6,7 +6,6 @@ import { composeWithDevTools } from 'remote-redux-devtools';
 import AsyncStorage from "@react-native-community/async-storage"
 import logger from 'redux-logger'
 import { persistStore, persistReducer } from 'redux-persist'
-import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 
 
 const persistConfig = {

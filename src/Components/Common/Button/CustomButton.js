@@ -84,7 +84,7 @@ export default class CustomButton extends PureComponent {
 
     const iconView = !isEmpty(icon) ? (
       <View style={[{ marginRight: label ? 6 : 0 , marginLeft:isIconRight && label ? 6: 0 }, styleIcon]}>
-        {Icon.IcoMoon(getIconObject(icon))}
+        {Icon.Ionicons(getIconObject(icon))}
       </View>
     ) : null;
 

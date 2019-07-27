@@ -71,6 +71,15 @@ export default class GamePlay extends PureComponent {
         return valueChange[key]
     };
 
+    onShowAlert = () =>{
+        CommonUtils.AlertCommon("Chức mừng",
+            `Bạn đã chiến thắng với thời gian ${CommonUtils.msToTime(this.state.countTimeUp)}`,
+            this.onPlayAgain,
+            "Chơi lại",
+            this.onGoBack,
+            'Đóng')
+    };
+
     onChangeStatusOfBrick = async (value, indexValue, indexRow) => {
         const newArray = await Immutable([...this.state.dataPuzzle]);
         const newDataPuzzle = await [...newArray.setIn([indexRow, indexValue], this.onGetValueNext(value.toString()))];
@@ -80,13 +89,7 @@ export default class GamePlay extends PureComponent {
             if (GamePlayUtils.isSolved(newDataPuzzle)) {
                 this.onSaveScore();
                 this.onClearInterval();
-                CommonUtils.AlertCommon("Chức mừng",
-                    `Bạn đã chiến thắng với thời gian ${CommonUtils.msToTime(this.state.countTimeUp)}`,
-                    this.onPlayAgain,
-                    "Chơi lại",
-                    this.onGoBack,
-                    'Đóng')
-
+                this.onShowAlert();
             }
         });
     };
@@ -140,7 +143,6 @@ export default class GamePlay extends PureComponent {
     </View>;
 
     render() {
-        console.log(GamePlayUtils.solve(this.state.dataPuzzle));
         return (
             <View style={styles.container}>
                 {this.renderHeader()}
@@ -151,11 +153,10 @@ export default class GamePlay extends PureComponent {
     }
 }
 
-GamePlay.propTypes = {
-    // bla: PropTypes.string,
-};
+GamePlay.propTypes = {};
 
 GamePlay.defaultProps = {
-    // bla: 'test',
-    navigation: PropTypes.object
+    navigation: PropTypes.object,
+    dataScore: PropTypes.array,
+    commonActions: PropTypes.object
 };

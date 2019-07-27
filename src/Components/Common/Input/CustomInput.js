@@ -22,7 +22,7 @@ export default class CustomInput extends PureComponent {
         );
         if (icon) return (
             <TouchableOpacity style={{ marginRight: 12 }} onPress={onPressLeft}>
-                {Icon.IcoMoon(getIconObject(icon))}
+                {Icon.Ionicons(getIconObject(icon))}
             </TouchableOpacity>
         );
         if (text) return (
@@ -46,7 +46,7 @@ export default class CustomInput extends PureComponent {
         );
         if (iconRight) return (
             <TouchableOpacity style={{ marginLeft: 12 }} onPress={onPressRight}>
-                {Icon.IcoMoon(getIconObject(iconRight))}
+                {Icon.Ionicons(getIconObject(iconRight))}
             </TouchableOpacity>
         );
         if (textRight) return (
